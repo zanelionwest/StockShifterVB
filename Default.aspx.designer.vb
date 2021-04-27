@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class _Default
 
     '''<summary>
-    '''pnlScanClick control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlScanClick As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
     '''lblScanClick control.
     '''</summary>
     '''<remarks>
@@ -47,5 +38,5 @@ Partial Public Class _Default
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnScanClick As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents btnScanClick As Global.System.Web.UI.WebControls.Button
 End Class
