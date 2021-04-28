@@ -9,32 +9,42 @@
     </div>
 
     <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 justify-content-center">
+            <asp:Label ID="lblCameraSelect" AssociatedControlID="ddlCameraSelect" runat="server" CssClass="lbl" Text="Camera: " />
 
-        <div class="col-md-4" > </div>
+            <asp:DropDownList ID="ddlCameraSelect" runat="server" Width="250" />
+        </div>
+        <div class="col-md-4"></div>
+    </div>
 
-        <div class="">
+    <div id="pnlScanClick" class="d-flex justify-content-center text-center">
 
-            <div id="pnlScanClick" class="d-flex justify-content-center text-center">
+        <div>
 
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center justify-content-center">
-                        <asp:Label ID="lblScanClick" AssociatedControlID="txtScanClick" class="" runat="server" Text="" />
-                    </div>
-                    <div>
-                        <asp:TextBox ID="txtScanClick" runat="server" MaxLength="50" Placeholder="Please click and scan." />
-                    </div>
-                    <br />
-                    <div class="row">
-                        <asp:Button ID="btnScanClick" runat="server" CssClass="btn btn-primary btn-lg" Text="GO" />
-                    </div>
-                </div>
-              
+            <div class="row">
+                <asp:Image ID="imgScanImage" runat="server" Width="500" Height="500" />
             </div>
 
         </div>
-
-        <div class="col-md-4" > </div>
-
     </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <asp:Label ID="lblScanClick" AssociatedControlID="txtBarcode" class="" runat="server" Text="Barcode: " />
+            <asp:TextBox ID="txtBarcode" runat="server" MaxLength="50" width="250"/>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+
+    <br />
+    <div class="row justify-content-center">
+        <asp:Button ID="btnScanClick" runat="server" CssClass="btn btn-primary btn-lg" Text="Start" />
+    </div>
+
+
 
 </asp:Content>

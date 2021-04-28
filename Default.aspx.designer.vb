@@ -14,6 +14,33 @@ Option Explicit On
 Partial Public Class _Default
 
     '''<summary>
+    '''lblCameraSelect control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblCameraSelect As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''ddlCameraSelect control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlCameraSelect As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''imgScanImage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents imgScanImage As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
     '''lblScanClick control.
     '''</summary>
     '''<remarks>
@@ -23,13 +50,13 @@ Partial Public Class _Default
     Protected WithEvents lblScanClick As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''txtScanClick control.
+    '''txtBarcode control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtScanClick As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtBarcode As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''btnScanClick control.

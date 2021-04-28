@@ -20,7 +20,7 @@
             </div>
 
             <div class="col-md-4">
-                <asp:Label ID="lblStockLocation" runat="server" AssociatedControlID="ddlStockLocation" />
+                <asp:Label ID="lblStockLocation" runat="server" AssociatedControlID="ddlStockLocation"/>
                 <asp:DropDownList ID="ddlStockLocation" runat="server" >
                     
                     <asp:ListItem Value="Default">Select...</asp:ListItem>
