@@ -10,8 +10,11 @@ Imports System.Drawing
 Public Class _Default
     Inherits Page
 
+
     Public Sub New()
-        InitializeComponent()
+        'Need to find the VB.NET InitializeComponent equivilent
+
+        'InitializeComponent()
     End Sub
 
     Private filterInfoCollection As FilterInfoCollection
@@ -23,39 +26,43 @@ Public Class _Default
         filterInfoCollection = New FilterInfoCollection(FilterCategory.VideoInputDevice)
 
         For Each device As FilterInfo In filterInfoCollection
-            cboCamera.Items.Add(device.Name)
+            ddlCameraSelect.Items.Add(device.Name)
         Next
 
-        ''cboCamera.SelectedIndex = 0
+        ddlCameraSelect.SelectedIndex = 0
 
     End Sub
 
     Private Sub btnScanClick_Click(sender As Object, e As EventArgs) Handles btnScanClick.Click
+        Dim StockCode As String
 
-        videoCaptureDevice = New VideoCaptureDevice(filterInfoCollection(cboCamera.SelectedIndex).MonikerString)
+
+        videoCaptureDevice = New VideoCaptureDevice(filterInfoCollection(ddlCameraSelect.SelectedIndex).MonikerString)
         videoCaptureDevice.NewFrame += AddressOf VideoCaptureDevice_NewFrame
         videoCaptureDevice.Start()
 
+        'temporarily commented out
 
-
-
-
-        'Dim StockCode As String
-        'StockCode = txtScanClick.Text
+        StockCode = txtBarcode.Text
+        'If videoCaptureDevice.IsRunning Then videoCaptureDevice.[Stop]()
         'Response.Redirect(String.Format("~/stock.aspx?val=" + StockCode))
-        If videoCaptureDevice.IsRunning Then videoCaptureDevice.[Stop]()
+
 
     End Sub
 
-    Private Sub VideoCaptureDevice_NewFrame(ByVal sender As Object, ByVal eventArgs As AForge.Video.NewFrame)
+    Private Sub VideoCaptureDevice_NewFrame(ByVal sender As Object, ByVal eventArgs As AForge.Video.NewFrameEventArgs) 'Changed Aforge.Video.NewFrame to NewframeEventArgs
         Dim bitmap As Bitmap = CType(eventArgs.Frame.Clone(), Bitmap)
         Dim reader As BarcodeReader = New BarcodeReader()
         Dim result = reader.Decode(bitmap)
 
         If result IsNot Nothing Then
-            txtBarcode.Invoke(New MethodInvoker(Function()
-                                                    txtBarcode.Text = result.ToString()
-                                                End Function))
+
+            txtBarcode.Text = result.ToString()
+            'moved out of the below invoker function
+
+            'txtBarcode.Invoke(New MethodInvoker(Function()
+            '
+            'End Function))
         End If
 
         imgScanImage = bitmap
